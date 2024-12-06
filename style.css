@@ -5,11 +5,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     color: #fff;
     overflow: hidden;
 }
-.header{
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,13 +23,14 @@ body{
     z-index: 100;
 }
 
-.logo{
+.logo {
     font-size: 30px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
 }
-.navbar a{
+
+.navbar a {
     font-size: 18px;
     color: #fff;
     text-decoration: none;
@@ -42,22 +44,23 @@ body{
     color: red;
 }
 
-.main{
+.main {
     min-height: 100vh;
     pointer-events: auto;
-
 }
 
 .main.active {
     filter: blur(5px);
     pointer-events: none;
 }
+
 .container {
     display: flex;
     height: 100vh;
     width: 200%;
 }
-.home{
+
+.home {
     position: relative;
     left: -50%;
     height: 100vh;
@@ -67,7 +70,7 @@ body{
     align-items: center;
 }
 
-.home-content{
+.home-content {
     max-width: 600px;
     display: flex;
     align-items: center;
@@ -79,10 +82,11 @@ body{
     font-weight: 700px;
     color: black;
 }
+
 .home-content p {
     font-size: 14px;
     text-align: center;
-    color:black;
+    color: black;
     margin-bottom: 30px;
 }
 
@@ -98,13 +102,13 @@ body{
     letter-spacing: 1px;
     font-weight: 500;
     cursor: pointer;
-
 }
 
 .home-content .start-btn:hover {
     background-color: aquamarine;
 }
-.popup-info{
+
+.popup-info {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -117,21 +121,25 @@ body{
     pointer-events: none;
     transition: 1s ease;
 }
+
 .popup-info.active {
     opacity: 1;
     pointer-events: auto;
 }
+
 .popup-info h2 {
     font-size: 50px;
     color: seagreen;
 }
-.info{
+
+.info {
     display: inline-block;
     font-size: 16px;
     color: #333;
     font-weight: 500;
     margin: 4px 0;
 }
+
 .btn-group {
     display: flex;
     justify-content: space-between;
@@ -139,7 +147,6 @@ body{
     border-top: 1px solid #999;
     margin-top: 10px;
     padding: 15px 0 7px;
-    
 }
 
 .info-btn {
@@ -173,7 +180,7 @@ body{
     border-color: seagreen;
 }
 
-.quiz-section{
+.quiz-section {
     position: relative;
     left: -50%;
     width: 100%;
@@ -185,7 +192,8 @@ body{
     transition-delay: .25s;
     z-index: 100;
 }
-.quiz-section.active{
+
+.quiz-section.active {
     left: 0;
 }
 
@@ -204,6 +212,7 @@ body{
     transition: 3s ease;
     transition-delay: 0s;
 }
+
 .quiz-section .quiz-box.active {
     opacity: 1;
     pointer-events: auto;
@@ -211,13 +220,14 @@ body{
     transition: 1s ease;
     transition-delay: 1s;
 }
+
 .quiz-box h1 {
     font-size: 32px;
     text-align: center;
     background: linear-gradient(45deg, transparent, pink, transparent);
 }
 
-.quiz-box .quiz-header{
+.quiz-box .quiz-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -237,12 +247,12 @@ body{
     padding: 7px;
 }
 
-.quiz-box .question-text{
+.quiz-box .question-text {
     font-size: 24px;
     font-weight: 600;
 }
 
-.option-list .option{
+.option-list .option {
     width: 100%;
     padding: 12px;
     background: transparent;
@@ -270,9 +280,11 @@ body{
     border-color: red;
     color: red;
 }
+
 .option-list .option.disabled {
     pointer-events: none;
 }
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;
@@ -282,12 +294,12 @@ body{
     margin-top: 30px;
 }
 
-.quiz-footer .question-total{
+.quiz-footer .question-total {
     font-size: 16px;
     font-weight: 600;
 }
 
-.quiz-footer .next-btn{
+.quiz-footer .next-btn {
     width: 100px;
     height: 45px;
     background: rgba(255, 255, 255, .1);
@@ -307,6 +319,7 @@ body{
     border-color: pink;
     color: white;
 }*/
+
 .quiz-footer .next-btn.active {
     pointer-events: auto;
     background: red;
@@ -319,7 +332,8 @@ body{
     border-color: pink;
     color: red;
 }
-.quiz-section .result-box{
+
+.quiz-section .result-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -336,14 +350,17 @@ body{
     pointer-events: none;
     transition: .3s ease;
 }
+
 .quiz-section .result-box.active {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(.9);
 }
+
 .result-box h2 {
     font-size: 52px;
 }
+
 .result-box .percentage-container {
     width: 300px;
     display: flex;
@@ -351,6 +368,7 @@ body{
     align-items: center;
     margin: 20px 0 40px;
 }
+
 .percentage-container .circular-progress {
     position: relative;
     width: 250px;
@@ -361,50 +379,85 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .percentage-container .circular-progress::before {
     content: "";
     position: absolute;
-    width: 210px;
-    height: 210px;
+    width: 85%;
+    height: 85%;
     background: #09001d;
     border-radius: 50%;
 }
-.circular-progress .progress-value {
-    position: relative;
-    font-size: 40px;
+
+.result-box .percentage-container h3 {
+    font-size: 30px;
     font-weight: 600;
+    color: purple;
 }
 
-.percentage-container .score-text {
-    font-size: 26px;
-    font-weight: 600;
-    margin-top: 20px;
+.result-box .percentage-container .percentage {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
 }
-.result-box .buttons{
-    display: flex;
-}
-.buttons button {
-    width: 130px;
-    height: 45px;
-    background: purple;
-    border: 2px solid purple;
-    outline: none;
-    border-radius: 6px;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 600;
-    margin: 0 20px;
-    cursor: pointer;
-}
-.buttons button:nth-child(1):hover {
-    background: #fff;
-    color: purple;
-}
-.buttons button:nth-child(2) {
+
+.result-box .result-footer .btn {
+    padding: 10px 25px;
     background: transparent;
     color: purple;
+    border: 2px solid purple;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
 }
-.buttons button:nth-child(2):hover {
+
+.result-box .result-footer .btn:hover {
     background: purple;
-    color: #fff;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    .header {
+        padding: 20px 5%;
+    }
+    .home-content h1 {
+        font-size: 40px;
+    }
+    .home-content p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .home-content {
+        width: 90%;
+    }
+    .home-content h1 {
+        font-size: 32px;
+    }
+    .home-content p {
+        font-size: 14px;
+    }
+    .home-content .start-btn {
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .quiz-box {
+        width: 90%;
+    }
+    .quiz-box h1 {
+        font-size: 28px;
+    }
+    .quiz-box .quiz-footer {
+        flex-direction: column;
+    }
+    .quiz-footer .next-btn {
+        width: 100%;
+        margin-top: 15px;
+    }
 }
