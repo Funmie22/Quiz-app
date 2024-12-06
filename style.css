@@ -58,7 +58,7 @@ body {
     display: flex;
     height: 100vh;
     width: 200%;
-    transition: all 0.5s ease; /* Add transition for responsiveness */
+    transition: all 0.5s ease;
 }
 
 .home {
@@ -348,4 +348,125 @@ body {
 
 .quiz-section .result-box.active {
     opacity: 1;
-    pointer-events
+    pointer-events: auto;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .home-content p {
+        font-size: 12px;
+    }
+
+    .home-content .start-btn {
+        width: 80px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home {
+        left: 0;
+        height: auto;
+    }
+
+    .popup-info {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .quiz-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .quiz-box h1 {
+        font-size: 24px;
+    }
+
+    .option-list .option {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .quiz-footer .next-btn {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .home-content h1 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 10px;
+    }
+
+    .home-content .start-btn {
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .popup-info {
+        width: 80%;
+        padding: 8px;
+    }
+
+    .quiz-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .quiz-box h1 {
+        font-size: 20px;
+    }
+
+    .option-list .option {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .quiz-footer .next-btn {
+        width: 70px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
