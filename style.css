@@ -1,4 +1,4 @@
-/* Base Styles (Unchanged) */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,36 +8,46 @@
 
 body {
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
+    background: #09001d;
 }
 
+/* Header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 15px 5%;
     background: seagreen;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 24px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
 }
 
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .navbar a {
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
-    transition: 3s;
+    transition: 0.3s;
 }
 
 .navbar a:hover,
@@ -45,47 +55,41 @@ body {
     color: red;
 }
 
+/* Main Content */
 .main {
     min-height: 100vh;
     pointer-events: auto;
+    padding-top: 80px; /* To avoid overlap with header */
 }
 
 .container {
     display: flex;
-    height: 100vh;
-    width: 200%;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 20px;
 }
 
 .home {
-    position: relative;
-    left: -50%;
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.home-content {
-    max-width: 600px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 15px;
+    text-align: center;
+    padding: 20px;
 }
 
 .home-content h1 {
-    font-size: 50px;
-    font-weight: 700px;
+    font-size: 36px;
+    font-weight: 700;
     color: black;
-    text-align: center;
 }
 
 .home-content p {
     font-size: 14px;
-    text-align: center;
     color: black;
-    margin-bottom: 30px;
+    margin: 15px 0 30px;
 }
 
 .home-content .start-btn {
@@ -96,10 +100,11 @@ body {
     outline: none;
     border-radius: 20px;
     box-shadow: 0 0 10px;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px;
     font-weight: 500;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .home-content .start-btn:hover {
@@ -108,129 +113,170 @@ body {
 
 /* Popup Info */
 .popup-info {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* Adjusted for smaller screens */
+    width: 90%;
     max-width: 500px;
     background: aqua;
     border-radius: 6px;
-    padding: 10px 25px;
+    padding: 20px;
+    text-align: center;
     opacity: 0;
     pointer-events: none;
-    transition: 1s ease;
+    transition: 0.3s ease;
 }
 
-/* Responsive Styles for Smaller Screens */
+.popup-info.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-info h2 {
+    font-size: 24px;
+    color: seagreen;
+    margin-bottom: 10px;
+}
+
+.info {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin: 4px 0;
+    text-align: left;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.info-btn {
+    flex: 1;
+    height: 45px;
+    background-color: seagreen;
+    border: 2px solid seagreen;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-btn:nth-child(1) {
+    background: transparent;
+    color: seagreen;
+}
+
+.info-btn:nth-child(1):hover {
+    background: seagreen;
+    color: #fff;
+}
+
+.info-btn:nth-child(2):hover {
+    background: aqua;
+    border-color: seagreen;
+}
+
+/* Quiz Section */
+.quiz-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quiz-box {
+    width: 90%;
+    max-width: 500px;
+    background: transparent;
+    border: 2px solid red;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.quiz-box h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid pink;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.quiz-header span {
+    font-size: 14px;
+}
+
+.quiz-header .header-score {
+    padding: 5px;
+    background: pink;
+    border-radius: 3px;
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.option-list .option {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option-list .option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Result Box */
+.result-box {
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid purple;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.result-box .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     .header {
-        padding: 10px 5%;
         flex-direction: column;
-    }
-
-    .logo {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    .navbar a {
-        font-size: 16px;
-        margin-left: 20px;
-    }
-
-    .home-content {
-        max-width: 90%;
-    }
-
-    .home-content h1 {
-        font-size: 36px;
-    }
-
-    .home-content p {
-        font-size: 12px;
-    }
-
-    .popup-info {
-        width: 95%;
-        padding: 15px 20px;
-    }
-
-    .popup-info h2 {
-        font-size: 32px;
-    }
-
-    .info {
-        font-size: 14px;
-    }
-
-    .btn-group .info-btn {
-        width: 110px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .quiz-box {
-        width: 90%;
-        padding: 15px 20px;
-    }
-
-    .quiz-box h1 {
-        font-size: 28px;
-    }
-
-    .quiz-header span {
-        font-size: 16px;
-    }
-
-    .quiz-box .question-text {
-        font-size: 20px;
-    }
-
-    .option-list .option {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .quiz-footer .next-btn {
-        width: 90px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    .result-box {
-        width: 90%;
-        padding: 15px 20px;
-    }
-
-    .result-box h2 {
-        font-size: 36px;
-    }
-
-    .percentage-container .circular-progress {
-        width: 200px;
-        height: 200px;
-    }
-
-    .circular-progress .progress-value {
-        font-size: 32px;
-    }
-
-    .percentage-container .score-text {
-        font-size: 18px;
-    }
-
-    .buttons button {
-        width: 100px;
-        height: 40px;
-        font-size: 14px;
-        margin: 0 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 10px 5%;
+        gap: 15px;
     }
 
     .logo {
@@ -242,48 +288,49 @@ body {
         margin-left: 15px;
     }
 
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .quiz-header .header-score {
+        font-size: 14px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .option-list .option {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
     .home-content h1 {
         font-size: 28px;
     }
 
-    .quiz-box h1 {
-        font-size: 22px;
-    }
-
-    .quiz-header span {
+    .home-content .start-btn {
         font-size: 14px;
-    }
-
-    .quiz-box .question-text {
-        font-size: 18px;
-    }
-
-    .option-list .option {
-        font-size: 12px;
-    }
-
-    .quiz-footer .next-btn {
         width: 80px;
         height: 35px;
-        font-size: 12px;
+    }
+
+    .popup-info h2 {
+        font-size: 20px;
+    }
+
+    .quiz-box h1 {
+        font-size: 20px;
     }
 
     .result-box h2 {
-        font-size: 28px;
+        font-size: 20px;
     }
 
-    .percentage-container .circular-progress {
-        width: 150px;
-        height: 150px;
-    }
-
-    .circular-progress .progress-value {
-        font-size: 24px;
-    }
-
-    .buttons button {
-        width: 90px;
-        height: 35px;
+    .info-btn {
         font-size: 12px;
     }
 }
