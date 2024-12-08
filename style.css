@@ -1281,7 +1281,6 @@ body{
     }
 
     .home {
-        position: relative;
         height: auto;
         width: auto;
         display: flex;
